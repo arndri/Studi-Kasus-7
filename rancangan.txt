@@ -1,0 +1,36 @@
+-2100018229 Shaluna Fasya Elmina
+-2100018234 Dini Rohmah
+-2100018249 Andri Pratama 
+
+
+input banyak data ke int banyak
+pake loop for dengan batas int banyak
+id ke int id[30]
+nama ke string nama[30]
+jabatan ke string jabatan[30]
+no telp ke int telp[30]
+
+
+proses digabung sama output
+
+cout pilihan sorting
+1. Ascending (kecil ke besar)
+2. Descending (besar ke kecil)
+cin ke int pilihan
+if pilihan == 1 maka ascending
+sorting Ascending berdasarkan id
+panggil fungsi
+
+else maka descending
+sorting Descending berdasarkan id
+panggil fungsi
+
+cout hasil sorting
+
+cout pencarian id
+cin ke int target
+pake Binary search
+output id, nama, jabatan, no telp
+
+
+
