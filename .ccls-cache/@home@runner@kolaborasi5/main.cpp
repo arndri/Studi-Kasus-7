@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 class kasus{
@@ -11,7 +12,8 @@ private:
 public:
   void input();
   void output();
-  int BinarySearch(int a[],int target,int low,int high);
+  int BinarySearch1(int a[],int target,int low,int high);
+  int BinarySearch2(int a[],int target,int low,int high);
   void sortASC();
   void sortDSC();
 };
@@ -102,7 +104,12 @@ void kasus::output(){
   cout<<"Masukkan ID Target  : ";cin>>target;
   low=0;
   high=banyak-1;
-  hasil=BinarySearch(id,target,low,high);
+  if(pilihan==1){
+    hasil=BinarySearch1(id,target,low,high);
+  }
+  else{
+    hasil=BinarySearch2(id,target,low,high);
+  }
   if(hasil== -1){
     cout<<"Data Tidak Ditemukan"<<endl;
   }
@@ -113,13 +120,28 @@ void kasus::output(){
   }
 }
 
-int kasus::BinarySearch(int a[],int target,int low,int high){
+int kasus::BinarySearch1(int a[],int target,int low,int high){
   while(low<=high){
 		int mid = low + (high - low )/2;
 		if(a[mid]==target){
 			return mid;
 		}
 		else if(a[mid]<target){
+			low = mid + 1;
+		}
+		else{
+			high = mid -1;
+		}
+	}
+	return -1;
+}
+int kasus::BinarySearch2(int a[],int target,int low,int high){
+  while(low<=high){
+		int mid = low + (low - high )/2;
+		if(a[mid]==target){
+			return mid;
+		}
+		else if(target<a[mid]){
 			low = mid + 1;
 		}
 		else{
